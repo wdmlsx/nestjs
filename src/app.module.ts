@@ -1,10 +1,16 @@
 import { Module } from '@nestjs/common';
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
+import { FileModule } from './file/file.module';
+import { EventEmitterModule } from '@nestjs/event-emitter';
+
+// import { OrderModule } from './order/order.module'
 
 @Module({
-  imports: [],
-  controllers: [AppController],
-  providers: [AppService],
+  imports: [
+    EventEmitterModule.forRoot({
+      global: true
+    }),
+    FileModule,
+    // OrderModule,
+  ]
 })
 export class AppModule {}
