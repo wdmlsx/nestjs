@@ -1,10 +1,10 @@
-import { ApiProperty } from "@nestjs/swagger";
+import { ApiProperty } from '@nestjs/swagger';
 
 export class FileTestDto {
-    @ApiProperty()
-    public message: string;
+  @ApiProperty()
+  public message: string;
 
-    constructor(msg: string) {
-        this.message = msg || ''
-    }
+  constructor(msg: string) {
+    this.message = msg || '';
+  }
 }
