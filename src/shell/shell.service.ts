@@ -10,6 +10,7 @@ import { inspect } from 'util';
 
 import { resolve } from 'path';
 import { existsSync } from 'fs';
+import * as JSZip from 'jszip';
 
 @Injectable()
 export class ShellService {
@@ -26,6 +27,9 @@ export class ShellService {
     const result = exec(
       `mysqldump -uroot -pwangdm123456 --databases xl_npm xl_npm_ > ${this.filePath}`,
     );
+
+    const zip = new JSZip();
+    zip.file(resolve(__dirname, 'ggvv.txt'), 'what a fuck ?');
 
     if (result.code === 0) {
       this.logger.fatal('result: ', this.filePath);
